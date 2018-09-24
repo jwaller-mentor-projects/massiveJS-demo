@@ -18,13 +18,16 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.state.items);
     let myItems =
       this.state.items[1] &&
       this.state.items.map((elem, ind) => {
-        <div key={ind}>
-          <h3>{elem.name}</h3>
-        </div>;
+        return (
+          <div key={ind}>
+            <h3>{elem.name}</h3>
+            <div>${elem.price}</div>
+          </div>
+        );
       });
     return (
       <div className="App">
